@@ -7,9 +7,17 @@ import Meals from "./components/Meals/Meals.js";
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
 
+  const showCartHandler = () => {
+    setCartIsShown(true);
+  };
+
+  const hideCartHandler = () => {
+    setCartIsShown(false);
+  }
+
   return (
     <Fragment>
-      <Cart/>
+      { cartIsShown && <Cart/>}
       <Header />
       <main>
         <Meals />
